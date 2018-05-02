@@ -54,10 +54,12 @@ COPY header.png /home/smasac/header.png
 
 # Change user:
 RUN chown -R ${NB_UID} ${HOME}
+RUN chmod -R 777 ${HOME}
 USER ${NB_USER}
 
 # Start Jupyter
 EXPOSE 8888
+EXPOSE 5000
 CMD ["jupyter", "notebook", "--ip=*", "--allow-root", "--no-browser"]
 
 
