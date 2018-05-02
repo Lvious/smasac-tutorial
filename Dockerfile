@@ -54,6 +54,7 @@ COPY header.png /home/smasac/header.png
 
 # Change user:
 RUN chown -R ${NB_UID} ${HOME}
+RUN chmod -R 777 ${HOME}
 USER ${NB_USER}
 
 # Start Jupyter
